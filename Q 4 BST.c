@@ -18,11 +18,11 @@ struct node *newNode(char item[])
 
 void inorder(struct node *root)
 {
-    if (root != NULL)
+    if (root == NULL)
     {
         inorder(root->left);
         printf("%s\n",root->key);
-        inorder(root->right);
+        inorder(root->left);
     }
 }
 
@@ -56,12 +56,12 @@ int main()
 {
     struct node *root = NULL;
     root = insert(root, "Arthi");
-    insert(root, "Christy");
+    insert(root, "Christian");
     insert(root, "Dorothy");
     insert(root, "Fraser");
     insert(root, "Eliza");
     insert(root, "David");
-    // print inoder traversal of the BST
+    // print inorder traversal of the BST
     inorder(root);
 
     return 0;
